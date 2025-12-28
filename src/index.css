@@ -1,96 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 140 30% 98%;
+    --foreground: 160 50% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 160 50% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 160 50% 10%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 152 60% 38%;
+    --primary-light: 152 55% 50%;
+    --primary-dark: 152 65% 28%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 160 25% 95%;
+    --secondary-foreground: 160 50% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 150 20% 94%;
+    --muted-foreground: 160 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 160 40% 90%;
+    --accent-foreground: 160 50% 20%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 150 25% 88%;
+    --input: 150 25% 88%;
+    --ring: 152 60% 38%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Custom Islamic Theme Colors */
+    --islamic-green: 152 60% 38%;
+    --islamic-green-light: 152 50% 55%;
+    --islamic-green-dark: 152 70% 25%;
+    --islamic-gold: 45 90% 55%;
+    --islamic-cream: 45 40% 96%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(152, 60%, 38%) 0%, hsl(170, 50%, 45%) 100%);
+    --gradient-header: linear-gradient(180deg, hsl(152, 60%, 35%) 0%, hsl(152, 55%, 42%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(150, 30%, 98%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(152, 30%, 20%, 0.08);
+    --shadow-md: 0 4px 20px hsl(152, 30%, 20%, 0.12);
+    --shadow-lg: 0 8px 40px hsl(152, 30%, 20%, 0.15);
+    --shadow-glow: 0 0 30px hsl(152, 60%, 38%, 0.3);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 160 30% 8%;
+    --foreground: 150 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 160 25% 12%;
+    --card-foreground: 150 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 160 25% 12%;
+    --popover-foreground: 150 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 152 55% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 160 20% 18%;
+    --secondary-foreground: 150 20% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 160 15% 20%;
+    --muted-foreground: 150 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 160 25% 22%;
+    --accent-foreground: 150 20% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 160 20% 20%;
+    --input: 160 20% 20%;
+    --ring: 152 55% 45%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(152, 55%, 35%) 0%, hsl(170, 45%, 40%) 100%);
+    --gradient-header: linear-gradient(180deg, hsl(152, 50%, 25%) 0%, hsl(152, 45%, 32%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(160, 25%, 14%) 0%, hsl(160, 20%, 10%) 100%);
   }
 }
 
@@ -100,6 +107,142 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-bengali antialiased;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .islamic-card {
+    @apply bg-card rounded-2xl shadow-md border border-border/50 overflow-hidden;
+    background: var(--gradient-card);
+  }
+
+  .islamic-header {
+    background: var(--gradient-header);
+    @apply text-primary-foreground;
+  }
+
+  .islamic-btn {
+    @apply bg-primary text-primary-foreground rounded-xl px-6 py-3 font-medium transition-all duration-300;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .islamic-btn:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+
+  .mosque-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M100 0c20 0 35 25 35 50v50H65V50c0-25 15-50 35-50zM25 30c10 0 18 15 18 30v40H7V60c0-15 8-30 18-30zM175 30c10 0 18 15 18 30v40h-36V60c0-15 8-30 18-30z'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size: 200px 80px;
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center gap-1 py-2 px-4 rounded-xl transition-all duration-300;
+  }
+
+  .nav-item.active {
+    @apply bg-primary/10 text-primary;
+  }
+
+  .nav-item:not(.active) {
+    @apply text-muted-foreground hover:text-primary/70;
+  }
+
+  .dua-card {
+    @apply islamic-card p-4 space-y-3 hover:shadow-lg transition-all duration-300;
+  }
+
+  .tasbih-button {
+    @apply w-40 h-40 rounded-full flex items-center justify-center text-5xl font-bold transition-all duration-150;
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-lg), inset 0 2px 10px rgba(255,255,255,0.2);
+  }
+
+  .tasbih-button:active {
+    transform: scale(0.95);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .prayer-time-card {
+    @apply islamic-card p-4 text-center space-y-1;
+  }
+
+  .prayer-time-card.active {
+    @apply ring-2 ring-primary bg-primary/5;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes countPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.count-pulse {
+  animation: countPulse 0.2s ease-out;
 }
